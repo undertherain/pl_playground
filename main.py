@@ -84,7 +84,8 @@ def main():
     # print("create tainer")
     print("CREATE TRAINER")
     trainer = pl.Trainer(
-        gpus=1,
+        gpus=2,
+        strategy="ddp",
         num_sanity_val_steps=0,
         max_epochs=1,
         replace_sampler_ddp=False,
