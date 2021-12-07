@@ -25,6 +25,7 @@ class MyNet(pl.LightningModule):
         x, y = batch
         # print("got batch of size", x.shape)
         y_hat = self(x).squeeze()
+        print(y_hat)
         loss = F.mse_loss(y_hat, y)
         # result = pl.TrainResult(loss)
         # result.log("train_loss", loss, on_epoch=True, sync_dist=True)
